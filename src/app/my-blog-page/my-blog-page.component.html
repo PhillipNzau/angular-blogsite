@@ -1,0 +1,27 @@
+<div class="container pb-3">
+  <div class="row d-flex justify-content-center pb-3" *ngFor="let blog of blogs">
+    <!--image-->
+    <div class="col-md-4 col-lg-4 pb-3"  routerLink="/blogs/{{blog.id}}">
+      <div class="container">
+        <img src="https://picsum.photos/500/500" class="rounded mx-auto d-block shadow-lg img-fluid" alt="...">
+      </div>
+    </div>
+    <!--/image-->
+    <!--content-->
+    <div class="col-md-4 col-lg-4"  routerLink="/blogs/{{blog.id}}">
+      <div class="container">
+        <h4 class="lead"><strong>{{ blog.headline }}</strong></h4>
+        <p>
+          {{ blog.content }}
+        </p>
+        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">{{ blog.footnote }}</cite></footer>
+      </div>
+    </div>
+    <!--/content-->
+      <div class="col-md-4 col-lg-4">
+        <button type="button" class="btn btn-info btn-block" routerLink="/edit-blog/{{blog.id}}">Edit</button>
+        <button type="button" class="btn btn-danger btn-block" (click)="onDeleteClocked(blog.id)">Delete</button>
+      </div>
+  </div>
+
+</div>
