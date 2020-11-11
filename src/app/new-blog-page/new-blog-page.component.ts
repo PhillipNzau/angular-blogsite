@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-new-blog-page',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-blog-page.component.css']
 })
 export class NewBlogPageComponent implements OnInit {
-
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(): void {
+    alert('Create a new blog...');
+    this.router.navigateByUrl('/my-blog');
+  }
 }

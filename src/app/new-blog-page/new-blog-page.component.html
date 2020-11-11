@@ -1,1 +1,20 @@
-<p>new-blog-page works!</p>
+<!--Upload style-->
+<style>
+  .custom-file-input {
+    /*position: ;*/
+    font-size: 50px;
+    opacity: 0;
+  }
+  .imav {
+    position: absolute;
+    align-content: center;
+  }
+</style>
+<!--/Style-->
+
+<div class="container">
+  <h2>Create New Blog</h2>
+  <app-blog-data-form
+    buttonText="Create Blog"
+    (onSubmit)="onSubmit()"></app-blog-data-form>
+</div>

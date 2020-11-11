@@ -10,6 +10,7 @@ import { BlogDetailPageComponent } from './blog-detail-page/blog-detail-page.com
 import { EditBlogPageComponent } from './edit-blog-page/edit-blog-page.component';
 import { MyBlogPageComponent } from './my-blog-page/my-blog-page.component';
 import { NewBlogPageComponent } from './new-blog-page/new-blog-page.component';
+import { BlogDataFormComponent } from './blog-data-form/blog-data-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NewBlogPageComponent } from './new-blog-page/new-blog-page.component';
     BlogDetailPageComponent,
     EditBlogPageComponent,
     MyBlogPageComponent,
-    NewBlogPageComponent
+    NewBlogPageComponent,
+    BlogDataFormComponent
   ],
   imports: [
     BrowserModule,
