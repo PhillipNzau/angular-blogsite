@@ -1,4 +1,5 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="!isLoading">
+<!--  <p>This Blog has been viewed {{blog.views}} times</p>-->
   <div class="row d-flex justify-content-center pb-3">
     <!--image-->
     <div class="col-md-4 col-lg-4 pb-3"  routerLink="/blogs/{{blog.id}}">
@@ -19,4 +20,7 @@
     </div>
     <!--/content-->
   </div>
+</div>
+<div class="container" *ngIf="isLoading">
+  <h3>Loading...</h3>
 </div>

@@ -4,4 +4,5 @@ export interface Blog {
   headline: string;
   content: string;
   footnote: string;
+  // views: number;
 }

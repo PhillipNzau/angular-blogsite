@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, ActivatedRouteSnapshot} from '@angular/router';
-import { fakeBlogs} from '../fake-data';
+import {BlogsService} from '../blogs.service';
 import { Blog} from '../types';
 
 @Component({
@@ -9,14 +9,22 @@ import { Blog} from '../types';
   styleUrls: ['./blog-detail-page.component.css']
 })
 export class BlogDetailPageComponent implements OnInit {
+  isLoading: boolean = true;
   blog: Blog;
   constructor(
     private route: ActivatedRoute,
+    private blogsService: BlogsService,
   ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.blog = fakeBlogs.find(blog => blog.id === id);
+    this.blogsService.getBlogById(id)
+      .subscribe(blog => {
+        this.blog = blog;
+        this.isLoading = false;
+      });
+    // this.blogsService.addViewToBlog(id)
+    //   .subscribe(() => console.log('ViewsUpdated!'));
   }
 
 }

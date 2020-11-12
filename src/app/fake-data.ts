@@ -18,4 +18,12 @@ export const fakeBlogs: Blog[] = [{
   headline: 'New Cow',
   content: 'Cow mooo. manze',
   footnote: '500',
-}];
+  // views: 0,
+},
+  {
+    id: '3163',
+    blogimg: 'string',
+    headline: 'New Cow',
+    content: 'Cow mooo. manze',
+    footnote: 'cheki',
+  }];

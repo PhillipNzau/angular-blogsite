@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { fakeBlogs } from '../fake-data';
 import { Blog } from '../types';
+import {BlogsService} from '../blogs.service';
+
 
 @Component({
   selector: 'app-my-blog-page',
@@ -10,14 +11,24 @@ import { Blog } from '../types';
 export class MyBlogPageComponent implements OnInit {
   blogs: Blog[] = [];
 
-  constructor() { }
+  constructor(
+    private blogsService: BlogsService,
+  ) { }
 
   ngOnInit(): void {
-    this.blogs = fakeBlogs;
+    this.blogsService.getBlogs()
+      .subscribe(blogs => {
+        this.blogs = blogs;
+      });
   }
 
   onDeleteClocked(blogId: string): void {
-    alert(`Deleting your blog with id ${blogId}`);
+    this.blogsService.deleteBlog(blogId)
+      .subscribe(() => {
+        this.blogs = this.blogs.filter(
+          blog => blog.id !== blogId
+        );
+      });
   }
 
 }

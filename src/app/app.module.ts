@@ -11,6 +11,7 @@ import { EditBlogPageComponent } from './edit-blog-page/edit-blog-page.component
 import { MyBlogPageComponent } from './my-blog-page/my-blog-page.component';
 import { NewBlogPageComponent } from './new-blog-page/new-blog-page.component';
 import { BlogDataFormComponent } from './blog-data-form/blog-data-form.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BlogDataFormComponent } from './blog-data-form/blog-data-form.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
