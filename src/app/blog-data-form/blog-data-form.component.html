@@ -1,0 +1,32 @@
+
+<form (ngSubmit)="onButtonClicked()">
+  <div class="form-group" style="border-color: dimgray; border-style: dashed;">
+    <div class="custom-file">
+      <img class="imav img-fluid" src="./assets/images/avatar.png" height="70" width="70" alt="">
+      <p class="imav pl-5 ml-5 pt-3">Select image</p>
+      <input type="file" class="custom-file-input form-control-file" id="blogimg" name="blogimg">
+    </div>
+  </div>
+<!--  <div class="form-group">-->
+<!--    <label for="inlineFormCustomSelect">Select Category</label>-->
+<!--    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">-->
+<!--      <option selected>Choose...</option>-->
+<!--      <option value="1">One</option>-->
+<!--      <option value="2">Two</option>-->
+<!--      <option value="3">Three</option>-->
+<!--    </select>-->
+<!--  </div>-->
+  <div class="form-group">
+    <label for="headline">Headline</label>
+    <input type="text" class="form-control" id="headline" name="headline" [(ngModel)]="headline">
+  </div>
+  <div class="form-group">
+    <label for="content">Blog Content</label>
+    <textarea class="form-control" id="content" name="content" rows="3" [(ngModel)]="content"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="footnote">Foot Note</label>
+    <input type="text" class="form-control" id="footnote" name="footnote" placeholder="-Inspired by" [(ngModel)]="footnote">
+  </div>
+  <button type="submit" class="btn btn-primary" >{{buttonText}}</button>
+</form>
